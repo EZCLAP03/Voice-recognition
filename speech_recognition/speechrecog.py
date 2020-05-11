@@ -13,26 +13,18 @@ with sr.Microphone() as source:
     except:
         print("Sorry could not recognize what you said")
 
-if (text == 'open Gmail'):
-    a_website = "https://www.gmail.com"
-    webbrowser.open_new(a_website)
-
-if (text == 'open YouTube'):
-    b_website = "https://www.youtube.com"
-    webbrowser.open_new(b_website)
-
 if text.startswith('search'):
-    x = text.split('search ')
-    y = text.split(f'search {x} ')[-1]
+    x = text.split('search')[-1]
+    print(x)
+    e_website = f"https://www.google.com/search?q={x}&rlz=1C1APWK_enIN766IN766&oq=yo+&aqs=chrome..69i57j0j69i59l2j69i60l4.1394j0j7&sourceid=chrome&ie=UTF-8"
+    webbrowser.open_new(e_website)
+
+if text.startswith('open'):
+    y = text.split ('open')[-1]
+    y = y.strip()
     print(y)
-
-if (text == 'open Edmodo'):
-    c_website = "https://www.edmodo.com"
+    c_website = f"https://www.{y}.com"
     webbrowser.open_new(c_website)
-
-if (text == 'open stackoverflow'):
-    d_website = "https://www.stackoverflow.com"
-    webbrowser.open_new(d_website)
 
 if (text == 'calculate'):
     with sr.Microphone() as source2:
