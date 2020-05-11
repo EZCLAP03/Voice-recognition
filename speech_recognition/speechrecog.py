@@ -21,6 +21,11 @@ if (text == 'open YouTube'):
     b_website = "https://www.youtube.com"
     webbrowser.open_new(b_website)
 
+if text.startswith('search'):
+    x = text.split('search ')
+    y = text.split(f'search {x} ')[-1]
+    print(y)
+
 if (text == 'open Edmodo'):
     c_website = "https://www.edmodo.com"
     webbrowser.open_new(c_website)
@@ -59,6 +64,9 @@ if (text == 'calculate'):
         y = float(input("Enter second number here: "))
         z = x / y
         speak.Speak(f"Your answer is {z}")
+
+
+
     
 
 
