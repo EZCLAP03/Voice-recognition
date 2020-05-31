@@ -5,3 +5,4 @@ External libraries required to run program - speech_recognition and webbrowser.
 Both can be installed using pip command.
 
 Main file with program is speechrecog.py in the main folder.
+Docs are here - shorturl.at/jqMN1.
