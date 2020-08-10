@@ -12,7 +12,6 @@ run = True
 
 while run:
     response = requests.get(f"https://www.parsehub.com/api/v2/projects/{project_token}/last_ready_run/data", params={"api_key": api_key})   
-    data = json.loads(response.text)
 
     speak = wincl.Dispatch("SAPI.SpVoice")
     r = sr.Recognizer()
@@ -39,13 +38,6 @@ while run:
             y = text.split ('what is the total number of coronavirus')[-1]
             y = y.strip()
             
-            if (y == 'cases'):
-                print(data['numberofcases'])
-            if (y == 'deaths'):
-                print(data['numberofdeaths'])
-            if (y == 'recoveries'):
-                print(data['numberofrecovered'])
-    
 
 
         if text.startswith('open'):
